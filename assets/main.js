@@ -1,10 +1,10 @@
-const load = document.querySelector('.main .options .load')
-const modalRound = document.querySelector('.main .take-round')
-const overlay = document.querySelector('.main .overlay')
+const load =document.querySelector('.main .table-game .options .load')
+const initGame = document.querySelector('.main .init-game')
+const overlayInitGame = document.querySelector('.main .overlayInitgame')
 
 load.addEventListener('click', () =>{
-    modalRound.classList.add('openRound')
-    overlay.classList.add('visible')
+    initGame.classList.add('newGame')
+    overlayInitGame.classList.add('visible')
     // modalRound.classList.remove('openRound')
     // modalRound.classList.add('openRound')
     
