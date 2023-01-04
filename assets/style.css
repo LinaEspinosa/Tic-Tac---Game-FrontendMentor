@@ -1,0 +1,222 @@
+:root{
+    --bgc:#192a33;
+    --equis:#34c7c0;
+    --yellow:#f1b432;
+    --bgc-box:#1e363e;
+    --gray:#a8bec9;
+    --black:#000;
+    --font:'Roboto', sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+body{
+    background-color: var(--bgc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main{
+    margin:1rem;
+}
+
+.main .init-game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.main .init-game .btn-new{
+    display: flex;
+    flex-direction: column;
+}
+
+.main .table-game{
+    display:none;
+}
+.main .options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main .options .simbols{
+    font-size: 3rem;
+}
+
+.equis{
+    color: var(--equis);
+    font-size: 3rem;
+}
+
+.zero{
+    font-size: 3rem;
+    color:var(--yellow);
+
+}
+.main .options .turn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgc-box);
+    color: var(--gray);
+    margin: 3rem .5rem;
+    width:6rem;
+    height:2rem;
+    font-size:.8rem;
+    border-radius: .5rem;
+    box-shadow:0 .5rem 1px rgba(0, 0, 0, 0.2);
+}
+.main .options .turn .x-text{
+    padding-right: .5rem;
+    font-size:1rem;
+}
+.main .options .load{
+    font-size:1rem;
+    background-color: var(--gray);
+    padding:1rem;
+    border-radius: .5rem;
+    box-shadow:0 .4rem 1px rgb(108, 137, 151);
+    cursor: pointer;
+
+}
+
+.main .content-game{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1rem;
+    margin: 3rem .5rem  1.5rem;
+}
+
+.main .content-game div{
+    background-color: var(--bgc-box);
+    width:6rem;
+    height:5rem;
+    border-radius: .5rem;
+    box-shadow:0 .5rem 1px rgba(0, 0, 0, 0.2);
+}
+
+.main .puntuation{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 1rem;
+    font-size:.7rem;
+    margin: 0 .5rem;
+}
+.main .puntuation .you,
+.main .puntuation .ties,
+.main .puntuation .cpu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:6rem;
+    height:4rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    
+}
+
+.main .puntuation .you{
+    
+    background-color: var(--equis);
+}
+
+.main .puntuation .ties{
+    background-color:var(--gray);
+}
+.main .puntuation .cpu{
+    background-color:var(--yellow);
+}
+
+.main .puntuation span{
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.main .take-round{
+    min-width:100%;
+    text-align: center;
+    position:absolute;
+    padding: 3rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    visibility: hidden;
+    transition:transform 0.4s, top 0.4s;
+    background-color:var(--bgc);
+    z-index: 9;
+}
+
+.main .overlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+}
+
+.main .overlay.visible{
+    visibility: visible;
+    z-index:8;
+}
+
+.main .openRound{
+    visibility: visible;
+    top:50%;
+    transform: translate(-50%,-50%) scale(1);
+
+
+}
+
+h5{
+    color:var(--gray);
+    font-size: .7rem;
+}
+
+.main .take-round .text-principal{
+    display:flex;
+    align-content:center;
+    justify-content:center;
+    color: var(--equis);
+    margin: 1rem;
+}
+.main .take-round h3{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .take-round i{
+    font-size:2rem;
+    font-weight:900;
+    margin-right: .5rem;
+}
+
+
+.main .take-round button{
+    padding: .5rem;
+    border: none;
+    border-radius: .5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-left: .5rem;
+}
+.main .take-round .btn-quit{
+    background-color:var(--gray);
+    
+}
+.main .take-round .btn-next{
+    background-color:var(--yellow);
+    
+}
