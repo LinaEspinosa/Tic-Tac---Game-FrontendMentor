@@ -33,7 +33,7 @@ body{
     min-width: 20rem;
     text-align: center;
     position: absolute;
-    top: 0%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
     visibility:hidden;
@@ -47,39 +47,52 @@ body{
     transform: translate(-50%,-50%) scale(1);
 }
 .main .init-game .pick-player{
-
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--bgc-box);
     padding:1rem;   
     border-radius: .5rem;
+    padding:1rem .5rem;
     margin:1rem 0;
+    box-shadow:0 .3rem 1px rgba(0, 0, 0, 0.2);
+
 }
 
-.main .init-game .pick-player  .btn-simbols{
+/* .main .init-game .pick-player  .btn-simbols{
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     margin:1rem 0;
-}
+} */
 
 .main .init-game .pick-player  .btn-simbols .pick-simbols{
     background-color: var(--bgc);
+    display: flex;
     justify-content:space-between;
     border: none;
-    padding: .2rem .2rem;
+    width:14rem;
     font-size: 1.5rem;
     border-radius: .5rem;
-}
-.main .init-game .pick-player  .btn-simbols .pick-simbols .iconX{
-    padding:0 2rem 0 2rem;
+    cursor: pointer;
     color:var(--gray);
+    margin:1rem;
+    padding:.5rem .5rem;
 }
-.main .init-game .pick-player  .btn-simbols .pick-simbols .iconO{
-    padding:0 2rem 0 2rem;
-    color:var(--bgc);
+
+.main .init-game .pick-player  .btn-simbols .pick-simbols .btns.selected{
     background-color: var(--gray);
+    color: var(--bgc);
+    width: 50%;
     border-radius: .5rem;
-    /* margin: 1rem 0; */
     
+}
+
+.main .init-game .pick-player  .btn-simbols .pick-simbols .btns{
+    background-color: var(--bgc);
+    color: var(--gray);
+    width: 50%;
 }
 
 
@@ -162,6 +175,9 @@ body{
 }
 
 .main .content-game div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--bgc-box);
     width:6rem;
     height:5rem;
@@ -290,4 +306,8 @@ h5{
 .main .take-round .btn-next{
     background-color:var(--yellow);
     
+}
+
+.hide{
+    display: none;
 }

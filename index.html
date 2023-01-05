@@ -8,6 +8,7 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="./assets/style.css" />
+    <!-- <link rel="stylesheet" href="./assets/style-prueba.css"> -->
     <!-- Icons -->
     <link
       rel="stylesheet"
@@ -39,14 +40,22 @@
         <div class="pick-player">
             <h5>PICK PLAYER 1'S MARK</h5>
             <div class="btn-simbols">
-                <button class="pick-simbols">
-                  <span class="iconX">
+              <!-- <label class="switch">
+                <input type="checkbox" id="checkbox1">
+                  <div class="slider round">
+                    X
+                    <span class="on">ON</span>
+                    <span class="off">OFF</span>
+                  </div>
+              </label> -->
+                <button class="pick-simbols" id="btn-pick">
+                  <span class="btns">
                     <i class="fa-solid fa-xmark"></i>
                   </span>
-                  <span class="iconO">
+                  <span class="btns selected">
                     <i class="fa-solid fa-o"></i>
                   </span>
-                </button>
+                </button>  
             </div>
             <h5>REMEMBER: X GOES FIRST</h5>
         </div>
@@ -69,16 +78,16 @@
             <i class="reload fa-solid fa-rotate-right"></i>
           </div>
         </div>
-        <div class="content-game">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div class="content-game" id="content-game">
+          <div data-row="1" data-column="0"> <i class="fa-solid fa-xmark equis"></i></div>
+          <div data-row="1" data-column="1"> <i class="fa-solid fa-o zero"></i></div>
+          <div data-row="1" data-column="2"></div>
+          <div data-row="2" data-column="0"></div>
+          <div data-row="2" data-column="1"></div>
+          <div data-row="2" data-column="2"></div>
+          <div data-row="3" data-column="0"></div>
+          <div data-row="3" data-column="1"></div>
+          <div data-row="3" data-column="2"></div>
         </div>
         <div class="puntuation">
           <div class="you">
