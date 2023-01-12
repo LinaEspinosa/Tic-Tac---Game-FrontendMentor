@@ -31,16 +31,17 @@
 
   <body>
     <main class="main">
+      <div class="table-options">
       <div class="init-game" id="init">
         <div class="simbols">
           <i class="fa-solid fa-xmark equis"></i>
           <i class="fa-solid fa-o zero"></i>
         </div>
-        <div class="pick-player">
+          <div class="pick-player">
             <h5>PICK PLAYER 1'S MARK</h5>
             <div class="btn-simbols">
                 <button class="pick-simbols" id="btn-pick">
-                  <span class="btns">
+                  <span class="btns" >
                     <i class="fa-solid fa-xmark"></i>
                   </span>
                   <span class="btns selected">
@@ -51,11 +52,13 @@
             <h5>REMEMBER: X GOES FIRST</h5>
         </div>
         <div class="btn-new">
-          <button type="button">NEW GAME (VS CPU)</button>
-          <button type="button">NEW GAME (VS PLAYER)</button>
+          <button id="game_cpu" type="button" >NEW GAME (VS CPU)</button>
+          <button id="game_player" type="button">NEW GAME (VS PLAYER)</button>
         </div>
       </div>
-      <div class="table-game">
+        </div>
+        
+      <div class="table-game" id="table-game">
         <div class="options">
           <div class="simbols">
             <i class="fa-solid fa-xmark equis"></i>
@@ -65,20 +68,20 @@
             <i class="fa-solid fa-xmark x-text"></i>
             <span>TURN</span>
           </div>
-          <div class="load" id="load">
+          <div id="load" class="load" >
             <i class="reload fa-solid fa-rotate-right"></i>
           </div>
         </div>
         <div class="content-game" id="content-game">
-          <div data-row="1" data-column="0"> <i class="fa-solid fa-xmark equis"></i></div>
-          <div data-row="1" data-column="1"> <i class="fa-solid fa-o zero"></i></div>
-          <div data-row="1" data-column="2"></div>
-          <div data-row="2" data-column="0"></div>
-          <div data-row="2" data-column="1"></div>
-          <div data-row="2" data-column="2"></div>
-          <div data-row="3" data-column="0"></div>
-          <div data-row="3" data-column="1"></div>
-          <div data-row="3" data-column="2"></div>
+          <div data-cell></div>
+          <div data-cell></div>
+          <div data-cell></div>
+          <div data-cell></div>
+          <div data-cell></div>
+          <div data-cell></div>
+          <div data-cell></div>
+          <div data-cell></div>
+          <div data-cell></div>
         </div>
         <div class="puntuation">
           <div class="you">
@@ -94,18 +97,19 @@
             <span>11</span>
           </div>
         </div>
-        <div class="take-round">
-          <h5>YOY WON!</h5>
-          <div class="text-principal">
-            <h3><i class="fa-solid fa-xmark x-text"></i>TAKES THE ROUND</h3>
-          </div>
-          <button type="button" class="btn-quit">QUIT</button>
-          <button type="button" class="btn-next">NEXT ROUND</button>
-        </div>
-        <div class="overlay"></div>
-        <div class="overlayInitgame"></div>
+
+        <div class="overlay" id="overlay"></div>
+        <div class="overlayInitgame" id="overlayInitgame"></div>
       </div>
     </main>
+    <div id="take-round" class="take-round">
+      <h5>YOY WON!</h5>
+      <div class="text-principal">
+        <h3><i class="fa-solid fa-xmark x-text"></i>TAKES THE ROUND</h3>
+      </div>
+      <button type="button" class="btn-quit" id="quit">QUIT</button>
+      <button type="button" class="btn-next" id="next">NEXT ROUND</button>
+    </div>
 
     <script src="./assets/main.js"></script>
   </body>

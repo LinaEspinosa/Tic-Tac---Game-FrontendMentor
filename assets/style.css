@@ -22,29 +22,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
-.main{
-    margin:1rem;
-}
-
-.main .init-game{
+.main .table-options{
     min-width: 20rem;
     text-align: center;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    visibility:hidden;
-    transition:transform 0.4s, top 0.4s;
-    z-index:9;
-
-}
-.main .newGame{
-    visibility: visible;
-    top:50%;
-    transform: translate(-50%,-50%) scale(1);
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 .main .init-game .pick-player{
     display: flex;
@@ -57,15 +45,9 @@ body{
     padding:1rem .5rem;
     margin:1rem 0;
     box-shadow:0 .3rem 1px rgba(0, 0, 0, 0.2);
+    
 
 }
-
-/* .main .init-game .pick-player  .btn-simbols{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    margin:1rem 0;
-} */
 
 .main .init-game .pick-player  .btn-simbols .pick-simbols{
     background-color: var(--bgc);
@@ -120,6 +102,24 @@ body{
 }
 
 
+.main .table-game{
+    min-width:20rem;
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition:transform 0.4s top 0.4s;
+    visibility: hidden;
+    background-color: var(--bgc);
+    z-index: 2;
+}
+.main .newGame{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
 .main .options{
     display: flex;
     justify-content: space-around;
@@ -131,11 +131,18 @@ body{
 }
 
 .equis{
+    
+    background-image: url('./images/xmark-solid.svg'); 
+    background-repeat:no-repeat ;
+    background-position: center;          
     color: var(--equis);
     font-size: 2rem;
 }
 
 .zero{
+    background-image: url('./images/o-solid.svg');
+    background-repeat:no-repeat ;
+    background-position: center;
     font-size: 2rem;
     color:var(--yellow);
 
@@ -157,21 +164,20 @@ body{
     padding-right: .5rem;
     font-size:1rem;
 }
-.main .options .load{
+.main .table-game .options .load{
     font-size:1rem;
     background-color: var(--gray);
     padding:1rem;
     border-radius: .5rem;
     box-shadow:0 .4rem 1px rgb(108, 137, 151);
-    cursor: pointer;
-
+    cursor:pointer;
 }
 
 .main .content-game{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap:1rem;
-    margin: 3rem .5rem  1.5rem;
+    margin: 0 .5rem  1.5rem;
 }
 
 .main .content-game div{
@@ -223,75 +229,84 @@ body{
     font-weight: 900;
 }
 
-.main .take-round{
+.take-round{
     min-width:100%;
+    min-height: 14rem;
     text-align: center;
     position:absolute;
     padding: 3rem;
-    top: 0;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) scale(0.1);
     visibility: hidden;
     transition:transform 0.4s, top 0.4s;
-    background-color:var(--bgc);
+    background-color:var(--bgc-box);
     z-index: 9;
+
+}
+.take-round button{
+    cursor:pointer;
+}
+.openRound{
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.main .overlay{
+.main .table-game .overlay{
     position: absolute;
     top: 0;
     left:0;
     width:100%;
     height:100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    visibility: hidden;
-}
-.main .overlayInitgame{
-    position: absolute;
-    top: 0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-color: var(--bgc);
+    background-color: rgba(0, 0, 0, 0.2);
     visibility: hidden;
 }
 
-.main .overlayInitgame.visible{
+.main .table-game .overlay.algo{
     visibility: visible;
     z-index:8;
-}
 
-.main .openRound{
-    visibility: visible;
-    top:50%;
-    transform: translate(-50%,-50%) scale(1);
 }
+/*.main .table-game .overlayInitgame{*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left:0;*/
+/*    width:100%;*/
+/*    height:100%;*/
+/*    visibility: hidden;*/
+/*}*/
+
+/*.main .table-game .overlayInitgame.visible{*/
+/*    visibility: visible;*/
+/*    z-index:1;*/
+/*}*/
+
 
 h5{
     color:var(--gray);
     font-size: .7rem;
 }
 
-.main .take-round .text-principal{
+.take-round .text-principal{
     display:flex;
     align-content:center;
     justify-content:center;
     color: var(--equis);
     margin: 1rem;
 }
-.main .take-round h3{
+.take-round h3{
     display:flex;
     justify-content: center;
     align-items: center;
 }
-.main .take-round i{
+.take-round i{
     font-size:2rem;
     font-weight:900;
     margin-right: .5rem;
 }
 
 
-.main .take-round button{
+.take-round button{
     padding: .5rem;
     border: none;
     border-radius: .5rem;
@@ -299,11 +314,11 @@ h5{
     color: var(--black);
     margin-left: .5rem;
 }
-.main .take-round .btn-quit{
+.take-round .btn-quit{
     background-color:var(--gray);
     
 }
-.main .take-round .btn-next{
+.take-round .btn-next{
     background-color:var(--yellow);
     
 }
