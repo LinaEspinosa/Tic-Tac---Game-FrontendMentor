@@ -40,7 +40,6 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: var(--bgc-box);
-    padding:1rem;   
     border-radius: .5rem;
     padding:1rem .5rem;
     margin:1rem 0;
@@ -109,7 +108,7 @@ body{
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) scale(0.1);
-    transition:transform 0.4s top 0.4s;
+    transition:transform 0.4s, top 0.4s;
     visibility: hidden;
     background-color: var(--bgc);
     z-index: 2;
@@ -132,7 +131,7 @@ body{
 
 .equis{
     
-    background-image: url('./images/xmark-solid.svg'); 
+    background-image: url('./images/icon-equis-solid.svg');
     background-repeat:no-repeat ;
     background-position: center;          
     color: var(--equis);
@@ -140,7 +139,7 @@ body{
 }
 
 .zero{
-    background-image: url('./images/o-solid.svg');
+    background-image: url('./images/icon-zero-solid.svg');
     background-repeat:no-repeat ;
     background-position: center;
     font-size: 2rem;
@@ -325,4 +324,14 @@ h5{
 
 .hide{
     display: none;
+}
+
+.gameplay__turn-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #a8bfc9;
+
 }
